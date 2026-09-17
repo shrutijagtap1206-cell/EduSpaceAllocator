@@ -1,4 +1,4 @@
-using EduSpaceAllocator.API.Data;
+﻿using EduSpaceAllocator.API.Data;
 using EduSpaceAllocator.API.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,6 +26,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<SpaceService>();
+builder.Services.AddScoped<LearningRequestService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
@@ -50,5 +51,6 @@ app.UseCors("AllowReactDev");
 app.MapControllers();
 
 app.Run();
+
 
 
