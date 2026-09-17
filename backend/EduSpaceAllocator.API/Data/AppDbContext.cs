@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using EduSpaceAllocator.API.Models;
 
 namespace EduSpaceAllocator.API.Data;
@@ -10,4 +10,6 @@ public class AppDbContext : DbContext
     public DbSet<Space> Spaces => Set<Space>();
 
     public DbSet<LearningRequest> LearningRequests => Set<LearningRequest>();
+
+    public DbSet<Community> Communities => Set<Community>();
 }

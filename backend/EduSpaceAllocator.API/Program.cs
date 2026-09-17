@@ -1,4 +1,4 @@
-﻿using EduSpaceAllocator.API.Data;
+using EduSpaceAllocator.API.Data;
 using EduSpaceAllocator.API.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,19 +14,17 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod());
 });
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowReactDev", policy =>
-        policy.WithOrigins("http://localhost:5173")
-              .AllowAnyHeader()
-              .AllowAnyMethod());
-});
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<SpaceService>();
 builder.Services.AddScoped<LearningRequestService>();
+builder.Services.AddScoped<CommunityService>();
+
+builder.Services.AddHttpClient("AIEngine", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:8000");
+});
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
@@ -42,15 +40,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("AllowReactDev");
+
 app.UseAuthorization();
-
-app.UseCors("AllowReactDev");
-
-app.UseCors("AllowReactDev");
 
 app.MapControllers();
 
 app.Run();
-
-
-
