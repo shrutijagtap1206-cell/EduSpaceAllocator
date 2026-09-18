@@ -489,3 +489,6 @@ frontend/eduspace-client/dist/
 ai-engine/**/__pycache__/
 ai-engine/**/*.pyc
 ai-engine/venv/
+
+# Local ASP.NET development settings
+**/appsettings.Development.json

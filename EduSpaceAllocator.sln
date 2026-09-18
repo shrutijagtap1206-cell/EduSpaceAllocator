@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{1AE8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSpaceAllocator.API", "backend\EduSpaceAllocator.API\EduSpaceAllocator.API.csproj", "{1C8A166E-5100-4CC8-BD2A-0570BD99399F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSpaceAllocator.Tests", "backend\EduSpaceAllocator.Tests\EduSpaceAllocator.Tests.csproj", "{4B300039-463E-46DD-A0CB-3348C711652D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,11 +31,24 @@ Global
 		{1C8A166E-5100-4CC8-BD2A-0570BD99399F}.Release|x64.Build.0 = Release|Any CPU
 		{1C8A166E-5100-4CC8-BD2A-0570BD99399F}.Release|x86.ActiveCfg = Release|Any CPU
 		{1C8A166E-5100-4CC8-BD2A-0570BD99399F}.Release|x86.Build.0 = Release|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Debug|x64.Build.0 = Debug|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Debug|x86.Build.0 = Debug|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Release|x64.ActiveCfg = Release|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Release|x64.Build.0 = Release|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Release|x86.ActiveCfg = Release|Any CPU
+		{4B300039-463E-46DD-A0CB-3348C711652D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1C8A166E-5100-4CC8-BD2A-0570BD99399F} = {1AE8ACA6-933B-BF2A-3671-3E2EAC007D16}
+		{4B300039-463E-46DD-A0CB-3348C711652D} = {1AE8ACA6-933B-BF2A-3671-3E2EAC007D16}
 	EndGlobalSection
 EndGlobal

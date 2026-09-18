@@ -1,4 +1,4 @@
-﻿using EduSpaceAllocator.API.Data;
+using EduSpaceAllocator.API.Data;
 using EduSpaceAllocator.API.DTOs;
 using EduSpaceAllocator.API.Models;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +17,7 @@ public class LearningRequestService
     public async Task<IEnumerable<LearningRequestDto>> GetAllAsync()
     {
         return await _context.LearningRequests
+            .AsNoTracking()
             .Select(r => new LearningRequestDto
             {
                 RequestId = r.RequestId,
@@ -24,7 +25,10 @@ public class LearningRequestService
                 ProgramType = r.ProgramType,
                 StudentCapacity = r.StudentCapacity,
                 Budget = r.Budget,
-                PreferredLocation = r.PreferredLocation
+                PreferredLocation = r.PreferredLocation,
+                PreferredLatitude = r.PreferredLatitude,
+                PreferredLongitude = r.PreferredLongitude,
+                CommunityId = r.CommunityId
             })
             .ToListAsync();
     }
@@ -43,7 +47,10 @@ public class LearningRequestService
             ProgramType = request.ProgramType,
             StudentCapacity = request.StudentCapacity,
             Budget = request.Budget,
-            PreferredLocation = request.PreferredLocation
+            PreferredLocation = request.PreferredLocation,
+            PreferredLatitude = request.PreferredLatitude,
+            PreferredLongitude = request.PreferredLongitude,
+            CommunityId = request.CommunityId
         };
     }
 
@@ -55,10 +62,14 @@ public class LearningRequestService
             ProgramType = dto.ProgramType,
             StudentCapacity = dto.StudentCapacity,
             Budget = dto.Budget,
-            PreferredLocation = dto.PreferredLocation
+            PreferredLocation = dto.PreferredLocation,
+            PreferredLatitude = dto.PreferredLatitude,
+            PreferredLongitude = dto.PreferredLongitude,
+            CommunityId = dto.CommunityId
         };
 
         _context.LearningRequests.Add(request);
+
         await _context.SaveChangesAsync();
 
         dto.RequestId = request.RequestId;
@@ -78,6 +89,9 @@ public class LearningRequestService
         request.StudentCapacity = dto.StudentCapacity;
         request.Budget = dto.Budget;
         request.PreferredLocation = dto.PreferredLocation;
+        request.PreferredLatitude = dto.PreferredLatitude;
+        request.PreferredLongitude = dto.PreferredLongitude;
+        request.CommunityId = dto.CommunityId;
 
         await _context.SaveChangesAsync();
 
@@ -92,6 +106,7 @@ public class LearningRequestService
             return false;
 
         _context.LearningRequests.Remove(request);
+
         await _context.SaveChangesAsync();
 
         return true;

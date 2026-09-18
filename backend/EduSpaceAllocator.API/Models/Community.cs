@@ -14,4 +14,7 @@ public class Community
     public double LiteracyRate { get; set; }
 
     public string IncomeGroup { get; set; } = string.Empty;
+
+    public ICollection<LearningRequest> LearningRequests { get; set; }
+        = new List<LearningRequest>();
 }

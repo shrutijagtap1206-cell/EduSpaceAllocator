@@ -16,4 +16,12 @@ public class LearningRequest
     public decimal Budget { get; set; }
 
     public string PreferredLocation { get; set; } = string.Empty;
+
+    public double PreferredLatitude { get; set; }
+
+    public double PreferredLongitude { get; set; }
+
+    public int CommunityId { get; set; }
+
+    public Community? Community { get; set; }
 }
